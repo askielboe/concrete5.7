@@ -1,7 +1,7 @@
-# Concrete5.7 for Docker
-[![](https://badge.imagelayers.io/chriswayg/concrete5.7:latest.svg)](https://imagelayers.io/?images=chriswayg/concrete5.7:latest)
+# Concrete5.8 for Docker
+[![](https://badge.imagelayers.io/askielboe/concrete5.8:latest.svg)](https://imagelayers.io/?images=askielboe/concrete5.8:latest)
 
-Docker image of Concrete5.7 with Apache2.4 and PHP 5.6 based on the official Debian Jessie image
+Docker image of Concrete5.8 with Apache2.4 and PHP 5.6 based on the official Debian Jessie image
 
 ![Concrete5](https://www.concrete5.org/themes/version_4/images/logo.png "Concrete5 logo")
 #### Concrete5 is an easy to use web content management system
@@ -42,11 +42,11 @@ docker run -d --name=c5_web_1 \
 --link db:db \
 -p 80:80 \
 -p 443:443 \
-chriswayg/concrete5.7
+askielboe/concrete5.8
 ```				   
 
 #### Docker-Compose
-Alternatively to the above, using docker-compose create the data-volume, database and Concrete5.7 containers all in one step, as can be seen in `docker-compose-datavol.yml`. Or if you prefer, use host volumes as shown below:
+Alternatively to the above, using docker-compose create the data-volume, database and Concrete5.8 containers all in one step, as can be seen in `docker-compose-datavol.yml`. Or if you prefer, use host volumes as shown below:
 
 ```
 $ cd c5
@@ -65,7 +65,7 @@ db:
     - ./data/var/lib/mysql:/var/lib/mysql
 
 web:
-  image: chriswayg/concrete5.7
+  image: askielboe/concrete5.8
   restart: always
   ports:
   - "80:80"
@@ -100,13 +100,13 @@ To find out where the data is stored on disk, check with `docker inspect c5_DATA
 
 #### Change a Theme's file
 
-Enter the Concrete5.7 docker container, locate the relevant css file & make changes - for examle something like...
+Enter the Concrete5.8 docker container, locate the relevant css file & make changes - for examle something like...
 ```
 $ docker exec -it c5_web_1 bash
 $ nano ./packages/theme_mytheme/themes/mytheme/css/style.css
 $ exit
 ```
-In Concrete5.7, clear the cache and reload the page.
+In Concrete5.8, clear the cache and reload the page.
 
 #### Backup Containers with Data in Volumes
 

@@ -65,7 +65,7 @@ docker run --rm --volumes-from ${PROJ_ORIG}${DATA_SUF2} -v ${PWD}:/clone debian 
 
 # 6. Clone Data:
 # existing files in volumes need to be deleted before restoring, as the installation may have created additional files during initial run,
-# which do not get overwritten during restore, such as the install files for web-apps like Concrete5.7
+# which do not get overwritten during restore, such as the install files for web-apps like Concrete5.8
 docker run --rm --volumes-from ${PROJ_CLONE}${DATA_SUF1} -v ${PWD}:/clone debian bash -c "rm -rf ${VOL1_1}/* ${VOL1_2}/* && tar -xpf /clone/clone${DATA_SUF1}.tar.gz"
 docker run --rm --volumes-from ${PROJ_CLONE}${DATA_SUF2} -v ${PWD}:/clone debian bash -c "rm -rf ${VOL2_1}/* && tar -xpf /clone/clone${DATA_SUF2}.tar.gz"
 

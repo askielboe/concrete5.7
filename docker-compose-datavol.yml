@@ -26,7 +26,7 @@ WEB-DATA:
     - /var/www/html
 
 web:
-  image: chriswayg/concrete5.7
+  image: askielboe/concrete5.8
   restart: always
   ports:
   - "80:80"

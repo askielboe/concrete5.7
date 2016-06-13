@@ -14,7 +14,7 @@ db:
     - ./data/var/lib/mysql:/var/lib/mysql
 
 web:
-  image: chriswayg/concrete5.7
+  image: askielboe/concrete5.8
   restart: always
   ports:
   - "80:80"
